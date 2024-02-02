@@ -53,16 +53,14 @@ img{
 }
 
 .section{
-    padding: 120px 0; 
+    padding: 120px 0;
+    margin: 0 auto ;
 }
 
 .main-head{
     background-color: #fff;
     border-bottom: 1px solid #E7E9FC;
-}
-
-.main-head .head-container{
-    margin: 0 auto;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .logo{
@@ -101,12 +99,12 @@ img{
     color: #404bbf;
 }
 
-.current{
+.head-nav-link.current{
     position: relative;
     color: #404bbf;
 }
 
-.current::after{
+.head-nav-link.current::after{
     content:"";
     position: absolute;
     left: 0;
@@ -141,9 +139,11 @@ img{
         to bottom,
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)),
-        url(/images/people-office\ 1.jpg);
+        url(../images/people-office\ 1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    max-width: 1440px;
+    background-position: center;
 }
 
 .main-page-body .main-title{
@@ -173,7 +173,7 @@ img{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     min-width: 169px;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-page-body .main-btn:hover,
@@ -205,6 +205,10 @@ img{
 }
 
 .icon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 112px;
     border-radius: 4px;
     border: 1px solid #8E8F99;
     background-color: #F4F4FD;
@@ -280,6 +284,10 @@ img{
     margin-bottom: 8px;
 }
 
+.icon{
+    fill: #f4f4fd;
+}
+
 .icon-list {
     display: flex;
     justify-content: center;
@@ -303,7 +311,8 @@ img{
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.icon-link:hover{
+.icon-link:hover,
+.icon-link:focus{
     background-color: #404BBF;
 }
 
@@ -331,29 +340,19 @@ img{
     border-bottom: 1px solid #E7E9FC;
 }
 
-.port-item:hover{
+.port-item{
     box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.port-item:hover .overlay{
-    transform: translateY(0);
+.port-item:hover .text-overlay{
+    transform: translateY(0%);
     background-color: #4D5AE5;
 }
 
 .box{
     position: relative;
     overflow: hidden;
-}
-
-.overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: translateY(100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 40px 32px 164px;
 }
 
 .text-overlay{
@@ -363,6 +362,14 @@ img{
     line-height: 1.5;
     letter-spacing: 0.02em;
     width: 296px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 40px 32px 164px;
 }
 
 .inform-container{
@@ -395,6 +402,11 @@ img{
 .footer-container{
     display: flex;
     gap: 120px;
+    align-items: baseline;
+}
+
+.first-part{
+    margin-right: 120px;
 }
 
 .footer .foot-text{
@@ -450,6 +462,11 @@ img{
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.foot-icon-link:hover{
+.foot-icon-link:hover,
+.foot-icon-link:focus{
     background-color: #31D0AA;
+}
+
+.foot-icon{
+    fill: #f4f4fd;
 }
